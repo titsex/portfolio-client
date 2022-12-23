@@ -1,0 +1,32 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll": true
+    },
+
+    "eslint.validate": ["javascript", "astro", "typescript", "svelte"],
+    "eslint.options": { "overrideConfigFile": ".eslintrc.json" },
+    "eslint.run": "onSave",
+    "eslint.packageManager": "pnpm",
+    "eslint.probe": ["javascript", "typescript", "markdown", "astro", "svelte"],
+
+    "prettier.configPath": ".prettierrc.json",
+    "prettier.documentSelectors": ["**/*.astro", "**/*.ts", "**/*.svelte", "**/*.mjs", "**/*.cjs"],
+
+    "svelte.enable-ts-plugin": true,
+    "svelte.plugin.svelte.useNewTransformation": false,
+    "svelte.plugin.svelte.note-new-transformation": false,
+
+    "[astro]": {
+        "editor.defaultFormatter": "astro-build.astro-vscode"
+    },
+
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode"
+    },
+
+    "typescript.format.enable": true
+}

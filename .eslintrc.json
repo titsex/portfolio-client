@@ -1,0 +1,112 @@
+{
+    "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+    "parser": "@typescript-eslint/parser",
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint", "import"],
+    "rules": {
+        "arrow-body-style": "off",
+        "prefer-arrow-callback": "off",
+        "no-undef": "off"
+    },
+    "overrides": [
+        {
+            "extends": ["plugin:astro/recommended", "plugin:tailwindcss/recommended"],
+            "files": ["*.astro"],
+            "parser": "astro-eslint-parser",
+            "parserOptions": {
+                "parser": "@typescript-eslint/parser",
+                "extraFileExtensions": [".astro"],
+                "ecmaVersion": "latest",
+                "sourceType": "module"
+            },
+            "plugins": ["tailwindcss", "astro"],
+            "rules": {
+                "astro/no-conflict-set-directives": "error",
+                "tailwindcss/classnames-order": "warn",
+                "tailwindcss/enforces-negative-arbitrary-values": "warn",
+                "tailwindcss/enforces-shorthand": "warn",
+                "tailwindcss/migration-from-tailwind-2": "warn",
+                "tailwindcss/no-arbitrary-value": "off",
+                "tailwindcss/no-custom-classname": "warn",
+                "tailwindcss/no-contradicting-classname": "error"
+            }
+        },
+        {
+            "extends": ["plugin:tailwindcss/recommended", "plugin:svelte/recommended"],
+            "files": ["*.svelte"],
+            "parser": "svelte-eslint-parser",
+            "parserOptions": {
+                "parser": "@typescript-eslint/parser",
+                "extraFileExtensions": [".svelte"],
+                "ecmaVersion": "latest",
+                "sourceType": "module"
+            },
+            "plugins": ["tailwindcss", "svelte"],
+            "rules": {
+                "tailwindcss/classnames-order": "warn",
+                "tailwindcss/enforces-negative-arbitrary-values": "warn",
+                "tailwindcss/enforces-shorthand": "warn",
+                "tailwindcss/migration-from-tailwind-2": "warn",
+                "tailwindcss/no-arbitrary-value": "off",
+                "tailwindcss/no-custom-classname": "warn",
+                "tailwindcss/no-contradicting-classname": "error"
+            }
+        },
+        {
+            "files": ["**/*.mjs"],
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "ecmaVersion": "latest",
+                "sourceType": "module",
+                "project": "./tsconfig.json"
+            },
+            "plugins": ["@typescript-eslint", "import"],
+            "rules": {
+                "import/no-extraneous-dependencies": "off",
+                "import/no-unresolved": "off"
+            }
+        },
+        {
+            "files": ["**/*.ts", "**/*.tsx"],
+            "plugins": ["@typescript-eslint", "import", "prettier"],
+            "extends": ["prettier"],
+            "parser": "@typescript-eslint/parser",
+            "parserOptions": {
+                "ecmaVersion": "latest",
+                "sourceType": "module",
+                "project": "./tsconfig.json"
+            },
+            "rules": {
+                "prettier/prettier": 2,
+                "import/extensions": [
+                    "error",
+                    "ignorePackages",
+                    {
+                        "js": "never",
+                        "jsx": "never",
+                        "ts": "never",
+                        "tsx": "never",
+                        "": "never"
+                    }
+                ],
+                "@typescript-eslint/comma-dangle": "off",
+                "@typescript-eslint/consistent-type-imports": "error",
+                "import/prefer-default-export": "off",
+                "tailwindcss/classnames-order": [
+                    "warn",
+                    {
+                        "officialSorting": true
+                    }
+                ],
+                "@typescript-eslint/no-unused-vars": "off"
+            }
+        }
+    ]
+}
