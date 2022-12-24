@@ -1,0 +1,60 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended", "prettier"],
+  "plugins": ["prettier"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2018
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "arrow-body-style": "off",
+    "prefer-arrow-callback": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.astro"],
+      "extends": ["plugin:astro/recommended"],
+      "plugins": ["astro"],
+      "parser": "astro-eslint-parser",
+      "env": {
+        "astro/astro": true
+      }
+    },
+    {
+      "files": ["**/*.astro/*.js", "*.astro/*.js", "**/*.svelte/*.js", "*.svelte/*.js"],
+      "env": {
+        "browser": true
+      },
+      "rules": {
+        "prettier/prettier": "off"
+      }
+    },
+    {
+      "files": ["*.svelte"],
+      "extends": ["plugin:svelte/prettier"],
+      "parser": "svelte-eslint-parser",
+      "env": {
+        "browser": true
+      }
+    },
+    {
+      "files": ["*.astro", "*.svelte"],
+      "extends": ["plugin:tailwindcss/recommended"],
+      "plugins": ["tailwindcss"],
+      "rules": {
+        "tailwindcss/classnames-order": "warn",
+        "tailwindcss/enforces-negative-arbitrary-values": "warn",
+        "tailwindcss/enforces-shorthand": "warn",
+        "tailwindcss/migration-from-tailwind-2": "warn",
+        "tailwindcss/no-arbitrary-value": "off",
+        "tailwindcss/no-custom-classname": "warn",
+        "tailwindcss/no-contradicting-classname": "error"
+      }
+    }
+  ]
+}
