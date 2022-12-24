@@ -75,8 +75,7 @@
         },
         {
             "files": ["**/*.ts", "**/*.tsx"],
-            "plugins": ["@typescript-eslint", "import", "prettier"],
-            "extends": ["prettier"],
+            "plugins": ["@typescript-eslint", "import"],
             "parser": "@typescript-eslint/parser",
             "parserOptions": {
                 "ecmaVersion": "latest",
@@ -84,7 +83,6 @@
                 "project": "./tsconfig.json"
             },
             "rules": {
-                "prettier/prettier": 2,
                 "import/extensions": [
                     "error",
                     "ignorePackages",

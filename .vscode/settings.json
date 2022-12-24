@@ -28,5 +28,7 @@
         "editor.defaultFormatter": "svelte.svelte-vscode"
     },
 
-    "typescript.format.enable": true
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    }
 }
