@@ -17,7 +17,7 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "src",
     "paths": {
-      "@component/*": ["components/*.astro"],
+      "@component/*": ["components/*"],
       "@layout/*": ["layouts/*.astro"],
       "@page/*": ["pages/*.astro"]
     }

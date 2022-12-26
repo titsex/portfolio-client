@@ -1,9 +1,13 @@
 ---
+import Footer from 'components/Footer.svelte'
+import Navigation from 'components/Navigation.svelte'
+
 export interface Props {
   title?: string
+  description?: string
 }
 
-const { title = 'Astro' } = Astro.props
+const { title = 'Portfolio', description = "titsex's portfolio" } = Astro.props
 ---
 
 <!DOCTYPE html>
@@ -11,10 +15,32 @@ const { title = 'Astro' } = Astro.props
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <script>
+      if (
+        localStorage.getItem('theme') === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ) {
+        document.documentElement.classList.add('dark')
+      } else {
+        document.documentElement.classList.remove('dark')
+      }
+    </script>
   </head>
-  <body>
-    <slot />
+  <body class="bg-white transition-colors duration-[85ms] dark:bg-black">
+    <header>
+      <Navigation client:load />
+    </header>
+
+    <main class="container m-auto mt-24 p-5 pt-3 text-black dark:text-white">
+      <slot />
+    </main>
+
+    <footer>
+      <Footer />
+    </footer>
   </body>
 </html>
