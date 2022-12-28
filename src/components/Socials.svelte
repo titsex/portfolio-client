@@ -13,28 +13,26 @@
   ]
 </script>
 
-<section class="w-full shrink-0 grow-0 basis-auto lg:w-7/12">
-  <div class="mb-5 text-center md:max-w-xl lg:max-w-3xl">
+<section class="w-6/12">
+  <div class="mb-5 text-center">
     <h1 class="text-2xl font-semibold">My Social</h1>
   </div>
 
   <div class="flex flex-wrap">
     {#each socials as social}
-      <div class="mb-12 ml-32 w-auto">
-        <div class="flex items-start">
-          <div class="shrink-0">
-            <a
-              href={social.link}
-              target="_blank"
-              aria-label={social.title}
-              rel="noreferrer"
-              class="flex h-14 w-14 items-center justify-center rounded-md p-4 shadow-sm shadow-black hover:scale-110 dark:shadow-white"
-            >
-              <svg viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none">
-                <path d={social.path} />
-              </svg>
-            </a>
-          </div>
+      <div class="mb-12 ml-32">
+        <div class="flex">
+          <a
+            href={social.link}
+            target="_blank"
+            aria-label={social.title}
+            rel="noreferrer"
+            class="h-14 w-14 rounded-lg p-3 shadow-sm shadow-black hover:scale-110 dark:shadow-white"
+          >
+            <svg viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none">
+              <path d={social.path} />
+            </svg>
+          </a>
 
           <a href={social.link} aria-label={social.title} class="ml-5 text-xl font-medium">{social.title}</a>
         </div>
