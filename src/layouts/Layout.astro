@@ -1,7 +1,6 @@
 ---
-import Footer from 'components/Footer.svelte'
-import Navigation from 'components/Navigation.svelte'
-import type { LayoutProps } from 'types'
+import Navigation from '@component/Navigation.svelte'
+import type { LayoutProps } from '@types'
 
 const {
   title = 'Portfolio',
@@ -16,6 +15,7 @@ const {
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
     <meta name="generator" content={Astro.generator} />
+
     <title>{title}</title>
 
     <script lang="ts">
@@ -34,9 +34,5 @@ const {
     <main class="container m-auto mt-24 p-5 pt-3 text-black dark:text-white">
       <slot />
     </main>
-
-    <footer>
-      <Footer />
-    </footer>
   </body>
 </html>

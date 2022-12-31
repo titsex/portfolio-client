@@ -19,7 +19,10 @@
     "paths": {
       "@component/*": ["components/*"],
       "@layout/*": ["layouts/*.astro"],
-      "@page/*": ["pages/*.astro"]
+      "@page/*": ["pages/*.astro"],
+      "@types": ["types"],
+      "@consts": ["consts"],
+      "@utils": ["utils"]
     }
   },
   "include": ["src/**/*"],

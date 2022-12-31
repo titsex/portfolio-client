@@ -1,57 +1,20 @@
 <script>
-  let isThemeSwitched = false
-
-  const links = [
-    { title: 'Home', path: '/' },
-    { title: 'About me', path: '#about' },
-    { title: 'Projects', path: '#projects' },
-    { title: 'Contacts', path: '#contacts' },
-  ]
-
-  function switchThemeVoice(theme) {
-    isThemeSwitched = true
-
-    const audio = new Audio(theme === 'dark' ? './enable-theme.ogg' : './disable-theme.ogg')
-    audio.volume = 0.5
-    audio.play()
-
-    setTimeout(() => (isThemeSwitched = false), 350)
-  }
-
-  function switchTheme() {
-    let theme = localStorage.getItem('theme')
-    if (!theme) theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'
-
-    const nextTheme = theme === 'dark' ? 'light' : 'dark'
-
-    if (theme === 'dark') document.documentElement.classList.remove('dark')
-    else document.documentElement.classList.add('dark')
-
-    localStorage.setItem('theme', nextTheme)
-    switchThemeVoice(nextTheme)
-  }
+  import { routes } from '@consts'
+  import { switchTheme } from '@utils'
 </script>
 
-<nav
-  class="fixed top-0 z-[9999] w-full bg-[rgba(255,255,255,0.3)] py-3 text-2xl text-black backdrop-blur dark:bg-[rgba(0,0,0,0.3)] dark:text-white"
->
+<nav class="navigation bg-[rgba(255,255,255,0.3)] text-black dark:bg-[rgba(0,0,0,0.3)] dark:text-white">
   <div class="mx-3 flex">
-    <a href="/" aria-label="Home" class="flex-auto">Portfolio</a>
+    <a href={'#'} aria-label="Home" class="flex-auto">Portfolio</a>
 
     <div class="flex-auto space-x-5">
-      {#each links as link}
-        <a aria-label={link.title} class="hover:text-red-400" href={link.path}>{link.title}</a>
+      {#each routes as route}
+        <a aria-label={route.title} class="hover:text-red-400" href={route.to}>{route.title}</a>
       {/each}
     </div>
 
-    <button
-      title={isThemeSwitched ? 'В разумных целях, переключение темы имеет перезарядку' : ''}
-      aria-label="theme-toggler"
-      disabled={isThemeSwitched}
-      on:click={switchTheme}
-      class="hover:text-red-400"
-    >
-      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <button aria-label="theme-toggler" on:click={switchTheme}>
+      <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
           stroke-linecap="round"
           stroke-linejoin="round"
@@ -62,3 +25,13 @@
     </button>
   </div>
 </nav>
+
+<style>
+  .navigation {
+    @apply fixed top-0 z-[9999] w-full py-3 text-2xl backdrop-blur;
+  }
+
+  button:hover {
+    @apply text-red-400;
+  }
+</style>

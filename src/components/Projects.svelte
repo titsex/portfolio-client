@@ -1,18 +1,5 @@
 <script>
-  const projects = [
-    {
-      image: 'image.jpg',
-    },
-    {
-      image: 'image.jpg',
-    },
-    {
-      image: 'image.jpg',
-    },
-    {
-      image: 'image.jpg',
-    },
-  ]
+  import { projects } from '@consts'
 </script>
 
 <section id="projects" class="mt-5 p-5">
@@ -23,7 +10,7 @@
       <div class="grid grid-cols-4 gap-7">
         {#each projects as project}
           <div class="bg-[#e6e6e6] transition-transform hover:scale-110 dark:bg-[#191919]">
-            <img width={350} height={350} class="invert dark:invert-0" src={project.image} alt="" />
+            <img width="350" height="350" class="invert dark:invert-0" src={project.image} alt="" />
             <div class="p-5">
               <h2 class="mb-5 text-xl font-semibold">next-extensive-template</h2>
               <p>

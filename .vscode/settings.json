@@ -4,6 +4,17 @@
   "editor.formatOnPaste": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.tabSize": 2,
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+
+  // Files Preference.
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+
+  // Fix "Unknown at rule @apply"
+  "css.lint.unknownAtRules": "ignore",
 
   // ESLint Preference.
   "eslint.validate": ["typescript", "svelte", "astro"],
@@ -16,10 +27,5 @@
   // File support .svelte
   "[svelte]": {
     "editor.defaultFormatter": "svelte.svelte-vscode"
-  },
-
-  // File support .ts
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
   }
 }
