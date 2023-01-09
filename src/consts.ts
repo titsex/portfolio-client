@@ -7,6 +7,8 @@ export const routes: IRoute[] = [
   { title: 'Contacts', to: '#contacts' },
 ]
 
+export const adminRoutes: IRoute[] = [{ title: 'Offers', to: '#offers' }]
+
 export const projects: IProject[] = [
   {
     image: 'image.jpg',
@@ -36,3 +38,5 @@ export const socials: ISocial[] = [
 ]
 
 export const avatarUrl = 'https://avatars.githubusercontent.com/u/61911688?v=4&s=240'
+
+export const offerStatuses = ['rejected', 'interested', 'reviewed', 'accepted']

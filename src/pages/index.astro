@@ -1,9 +1,9 @@
 ---
 import Layout from '@layout/Layout'
-import AboutMe from '@component/AboutMe.svelte'
-import Contacts from '@component/Contacts.svelte'
-import Projects from '@component/Projects.svelte'
-import Socials from '@component/Socials.svelte'
+import AboutMe from '@component/AboutMe'
+import Contacts from '@component/Contacts'
+import Projects from '@component/Projects'
+import Socials from '@component/Socials'
 ---
 
 <Layout>
@@ -11,7 +11,7 @@ import Socials from '@component/Socials.svelte'
   <Projects />
 
   <div id="contacts" class="mt-5 flex p-5">
-    <Contacts />
+    <Contacts client:load />
     <Socials />
   </div>
 </Layout>

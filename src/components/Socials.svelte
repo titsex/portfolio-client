@@ -3,9 +3,7 @@
 </script>
 
 <section class="w-6/12">
-  <div class="mb-5 text-center">
-    <h1 class="text-2xl font-semibold">My Social</h1>
-  </div>
+  <h1 class="mb-5 text-center text-2xl font-semibold">My Social</h1>
 
   <div class="flex flex-wrap">
     {#each socials as social}

@@ -1,6 +1,8 @@
 export interface LayoutProps {
   title?: string
   description?: string
+  navigationType?: 'default' | 'admin'
+  navigationStatus?: boolean
 }
 
 export interface IRoute {
@@ -19,3 +21,31 @@ export interface ISocial {
 }
 
 export type ITheme = 'dark' | 'light'
+
+export interface ISendOffer {
+  email: string
+  name: string
+  message: string
+}
+
+export interface IChangeOfferStatus {
+  status: OfferStatuses
+  id: number
+}
+
+export interface IOffer {
+  id: number
+  email: string
+  name: string
+  message: string
+  isConfirmed: boolean
+  confirmationLink: string
+  status: OfferStatuses
+}
+
+export type OfferStatuses = 'rejected' | 'interested' | 'reviewed' | 'accepted' | 'pending'
+
+export interface ILoginUser {
+  email: string
+  password: string
+}

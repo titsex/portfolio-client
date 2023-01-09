@@ -1,10 +1,12 @@
 ---
-import Navigation from '@component/Navigation.svelte'
+import Navigation from '@component/Navigation'
 import type { LayoutProps } from '@types'
 
 const {
   title = 'Portfolio',
   description = 'My portfolio is a website that not only informs about me, but also shows my skills.',
+  navigationType = 'default',
+  navigationStatus = true,
 } = Astro.props as LayoutProps
 ---
 
@@ -28,7 +30,7 @@ const {
   </head>
   <body class="bg-white transition-colors duration-[85ms] dark:bg-black">
     <header>
-      <Navigation client:load />
+      <Navigation status={navigationStatus} type={navigationType} client:load />
     </header>
 
     <main class="container m-auto mt-24 p-5 pt-3 text-black dark:text-white">

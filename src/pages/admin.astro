@@ -1,0 +1,19 @@
+---
+import Offers from '@component/Admin/Offers'
+import Layout from '@layout/Layout'
+---
+
+<Layout navigationType="admin">
+  <Offers client:load />
+</Layout>
+
+<script>
+  import checkAuth from '@http/users/check-auth'
+
+  if (localStorage.getItem('token')) {
+    await checkAuth().catch(() => {
+      localStorage.removeItem('token')
+      location.replace('/authorization')
+    })
+  } else location.replace('/authorization')
+</script>

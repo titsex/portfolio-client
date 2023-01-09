@@ -17,12 +17,14 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "src",
     "paths": {
-      "@component/*": ["components/*"],
+      "@component/*": ["components/*.svelte"],
       "@layout/*": ["layouts/*.astro"],
       "@page/*": ["pages/*.astro"],
       "@types": ["types"],
       "@consts": ["consts"],
-      "@utils": ["utils"]
+      "@utils": ["utils"],
+      "@http/*": ["http/*"],
+      "@SVG/*": ["components/SVG/*.svelte"]
     }
   },
   "include": ["src/**/*"],

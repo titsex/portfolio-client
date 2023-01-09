@@ -8,11 +8,6 @@
     "strings": true
   },
 
-  // Files Preference.
-  "files.associations": {
-    "*.css": "tailwindcss"
-  },
-
   // Fix "Unknown at rule @apply"
   "css.lint.unknownAtRules": "ignore",
 
