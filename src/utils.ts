@@ -1,5 +1,6 @@
 import type { ITheme, OfferStatuses } from '@types'
 import { isAxiosError } from 'axios'
+import { IError } from './types'
 
 function switchThemeVoice(theme: ITheme) {
   const audio = new Audio(theme === 'dark' ? './enable-theme.ogg' : './disable-theme.ogg')
@@ -21,8 +22,28 @@ export function switchTheme() {
 }
 
 export function getAxiosErrorMessage(error: unknown) {
-  if (isAxiosError(error)) return error.response?.data.error || 'Unknown error'
+  if (isAxiosError(error)) {
+    const errors = error.response?.data.error || 'Unknown error'
+
+    if (Array.isArray(errors) || (typeof errors === 'object' && 'message' in errors && 'param' in errors))
+      return handleValidationErrors(errors)
+
+    return errors
+  }
+
   return 'Unknown error'
+}
+
+export function handleValidationErrors(errors: IError[] | IError) {
+  if (!Array.isArray(errors)) return errors.message
+
+  let result = ''
+
+  for (const error of errors) {
+    result += `${error.message}\n`
+  }
+
+  return result
 }
 
 export function getTextColorByOfferStatus(status: OfferStatuses) {

@@ -10,6 +10,11 @@ export interface IRoute {
   to: string
 }
 
+export interface IError {
+  message: string
+  param: string
+}
+
 export interface IProject {
   image: string
 }

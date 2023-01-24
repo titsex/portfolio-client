@@ -1,8 +1,8 @@
 <script>
   import RefreshOffersListIcon from '@SVG/RefreshOffersListIcon'
-  import { getOffers } from '@http/offers/get-offers'
   import OffersList from '@component/Admin/OffersList'
   import Spinner from '@component/Spinner'
+  import { getOffers } from '@http/offers/get-offers'
 
   let promise = getOffers()
 

@@ -11,21 +11,23 @@
   }
 </script>
 
-<div class="grid grid-cols-1 place-items-center">
+<div>
   <h1 class="mb-5 text-center text-2xl font-semibold">Authorization</h1>
 
-  <input placeholder="Email" type="email" bind:value={email} class="bg-[#e6e6e6] dark:bg-[#191919]" />
-  <input placeholder="Password" type="password" bind:value={password} class="bg-[#e6e6e6] dark:bg-[#191919]" />
+  <form name="authForm" autocomplete class="grid grid-cols-1 place-items-center">
+    <input placeholder="Email" type="email" bind:value={email} class="bg-[#e6e6e6] dark:bg-[#191919]" />
+    <input placeholder="Password" type="password" bind:value={password} class="bg-[#e6e6e6] dark:bg-[#191919]" />
 
-  <button on:click={handleClick}>SEND</button>
+    <button type="button" on:click={handleClick}>SEND</button>
 
-  {#if promise}
-    {#await promise}
-      <Spinner />
-    {:catch error}
-      <span>{error}</span>
-    {/await}
-  {/if}
+    {#if promise}
+      {#await promise}
+        <Spinner />
+      {:catch error}
+        <span>{error}</span>
+      {/await}
+    {/if}
+  </form>
 </div>
 
 <style>
@@ -42,6 +44,6 @@
   }
 
   span {
-    @apply mt-3 flex justify-center text-center font-bold;
+    @apply mt-3 flex justify-center whitespace-pre-line text-center font-bold;
   }
 </style>

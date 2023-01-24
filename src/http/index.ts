@@ -1,18 +1,12 @@
-import axios, { AxiosRequestConfig } from 'axios'
+import axios from 'axios'
 
 const api = axios.create({
   baseURL: 'http://localhost:7000/api/',
   withCredentials: true,
-  headers: {
-    'Content-Type': 'application/json',
-  },
 })
 
-api.interceptors.request.use((config: AxiosRequestConfig) => {
+api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token')
-
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore
   config.headers.Authorization = token ? `Bearer ${token}` : ''
 
   return config
