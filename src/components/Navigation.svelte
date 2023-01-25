@@ -4,6 +4,7 @@
 
   import { routes, adminRoutes } from '@consts'
   import { switchTheme } from '@utils'
+
   import SwitchThemeIcon from '@SVG/SwitchThemeIcon'
   import logoutUser from '@http/users/logout-user'
 
@@ -24,14 +25,13 @@
       </div>
     {/if}
 
-    {#if type === 'admin' && localStorage.getItem('token')}
-      <button
-        on:click={handleClick}
-        class="mr-5 rounded-full bg-red-900 px-2 py-1 text-sm font-bold hover:scale-105 hover:bg-red-700"
-      >
-        Log out
-      </button>
-    {/if}
+    <button
+      on:click={handleClick}
+      hidden={!(type === 'admin' && localStorage.getItem('token'))}
+      class="mr-5 rounded-full bg-red-900 px-2 py-1 text-sm font-bold hover:scale-105 hover:bg-red-700"
+    >
+      Log out
+    </button>
 
     <button class="hover:text-red-400" aria-label="theme-toggler" on:click={switchTheme}>
       <SwitchThemeIcon />
