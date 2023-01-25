@@ -28,7 +28,9 @@ const {
       else document.documentElement.classList.remove('dark')
     </script>
   </head>
-  <body class="bg-white transition-colors duration-[85ms] dark:bg-black">
+  <body
+    class="bg-white scrollbar-track-white scrollbar-thumb-slate-300 dark:bg-black dark:scrollbar-track-black dark:scrollbar-thumb-neutral-900"
+  >
     <header>
       <Navigation status={navigationStatus} type={navigationType} client:load />
     </header>
@@ -37,4 +39,14 @@ const {
       <slot />
     </main>
   </body>
+
+  <style lang="css">
+    body {
+      @apply transition-colors duration-[85ms] scrollbar;
+    }
+
+    body::-webkit-scrollbar-thumb:hover {
+      @apply scrollbar scrollbar-track-white scrollbar-thumb-slate-400 dark:scrollbar-track-black dark:scrollbar-thumb-[#080808];
+    }
+  </style>
 </html>

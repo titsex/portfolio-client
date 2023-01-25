@@ -41,6 +41,6 @@
 
 <style>
   .navigation {
-    @apply fixed top-0 z-[9999] w-full py-3 text-2xl backdrop-blur;
+    @apply fixed top-0 z-[9999] w-full py-3 px-3 text-2xl backdrop-blur;
   }
 </style>
