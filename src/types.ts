@@ -25,7 +25,7 @@ export interface ISocial {
   link: string
 }
 
-export type ITheme = 'dark' | 'light'
+export type ITheme = 'dark' | 'light' | ''
 
 export interface ISendOffer {
   email: string
@@ -50,7 +50,26 @@ export interface IOffer {
 
 export type OfferStatuses = 'rejected' | 'interested' | 'reviewed' | 'accepted' | 'pending'
 
-export interface ILoginUser {
+export interface ILogin {
   email: string
   password: string
+}
+
+enum IRoles {
+  USER = 'user',
+  DEVELOPER = 'developer',
+}
+
+interface IUser {
+  email: string
+  uid: string
+  isActivated: boolean
+  roles: IRoles[]
+  createdAt: Date
+}
+
+export interface ILoginResponse {
+  accessToken: string
+  refreshToken: string
+  user: IUser
 }

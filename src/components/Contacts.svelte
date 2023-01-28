@@ -1,12 +1,11 @@
 <script>
-  import sendOffer from '@http/offers/send-offer'
   import Spinner from '@component/Spinner'
 
   let [name, email, message] = ['', '', '']
   let promise
 
   function handleClick() {
-    promise = sendOffer({ email, name, message })
+    // todo
   }
 </script>
 

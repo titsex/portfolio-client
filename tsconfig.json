@@ -5,10 +5,7 @@
     "experimentalDecorators": true,
     "target": "ES2018",
     "module": "NodeNext",
-    "lib": [
-      "ES6",
-      "dom"
-    ],
+    "lib": ["ES6", "dom"],
     "moduleResolution": "Node",
     "importHelpers": true,
     "strict": true,
@@ -26,7 +23,7 @@
       "@types": ["types"],
       "@consts": ["consts"],
       "@utils": ["utils"],
-      "@http/*": ["http/*"],
+      "@store/*": ["store/*"],
       "@SVG/*": ["components/SVG/*.svelte"]
     }
   },

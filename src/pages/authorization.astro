@@ -8,5 +8,7 @@ import Layout from '@layout/Layout'
 </Layout>
 
 <script>
-  if (localStorage.getItem('token')) location.replace('/admin')
+  import { token } from '@store/authorization'
+
+  if (token.get()) location.replace('/admin')
 </script>

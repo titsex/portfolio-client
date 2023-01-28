@@ -1,13 +1,13 @@
 <script>
   import Spinner from '@component/Spinner'
-  import loginUser from '@http/users/login-user'
+  import { login } from '@store/authorization'
 
   let promise
 
   let [email, password] = ['', '']
 
   function handleClick() {
-    promise = loginUser({ email, password }).then(() => location.replace('/admin'))
+    promise = login(email, password)
   }
 </script>
 

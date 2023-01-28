@@ -2,15 +2,11 @@
   export let type
   export let status
 
+  import { logout, token } from '@store/authorization'
   import { routes, adminRoutes } from '@consts'
-  import { switchTheme } from '@utils'
+  import { switchTheme } from '@store/theme'
 
   import SwitchThemeIcon from '@SVG/SwitchThemeIcon'
-  import logoutUser from '@http/users/logout-user'
-
-  function handleClick() {
-    logoutUser().then(() => location.replace('/'))
-  }
 </script>
 
 <nav class="navigation bg-[rgba(255,255,255,0.3)] text-black dark:bg-[rgba(0,0,0,0.3)] dark:text-white">
@@ -26,8 +22,8 @@
     {/if}
 
     <button
-      on:click={handleClick}
-      hidden={!(type === 'admin' && localStorage.getItem('token'))}
+      on:click={logout}
+      hidden={!(type === 'admin' && token.get())}
       class="mr-5 rounded-full bg-red-900 px-2 py-1 text-sm font-bold hover:scale-105 hover:bg-red-700"
     >
       Log out
