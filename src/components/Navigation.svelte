@@ -32,19 +32,14 @@
       {/if}
     </div>
 
-    <div class="ml-auto flex">
-      <button on:click={logout} id="logout" hidden={!(type === 'admin' && token.get())} class=""> Log out </button>
+    <div class="ml-auto mb-auto flex">
+      <button on:click={logout} id="logout" hidden={!(type === 'admin' && token.get())}> Log out </button>
 
-      <button
-        id="switchTheme"
-        class="mr-5 mt-1 flex md:mt-0 md:mr-0 md:block"
-        aria-label="theme-toggler"
-        on:click={switchTheme}
-      >
+      <button id="switchTheme" class="mr-5 md:mr-0" aria-label="theme-toggler" on:click={switchTheme}>
         <SwitchThemeIcon />
       </button>
 
-      <button id="handleMenu" on:click={handleMenu} class="flex md:hidden">
+      <button id="handleMenu" on:click={handleMenu} class="md:hidden">
         <MenuIcon />
       </button>
     </div>
