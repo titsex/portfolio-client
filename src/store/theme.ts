@@ -5,7 +5,6 @@ export const theme = persistentAtom<ITheme>('theme', '')
 
 export function switchTheme() {
   let currentTheme = theme.get()
-  console.log(currentTheme)
 
   if (!currentTheme) {
     theme.set(document.documentElement.classList.contains('dark') ? 'dark' : 'light')
