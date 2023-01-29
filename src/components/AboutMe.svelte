@@ -2,7 +2,7 @@
   import { avatarUrl } from '@consts'
 </script>
 
-<section id="about" class="bg-[#e6e6e6] dark:bg-[#191919]">
+<section id="about" class="bg-light-theme dark:bg-dark-theme">
   <div class="flex">
     <section class="flex-none">
       <img

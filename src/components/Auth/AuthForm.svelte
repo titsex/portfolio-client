@@ -15,10 +15,10 @@
   <h1 class="mb-5 text-center text-2xl font-semibold">Authorization</h1>
 
   <form name="authForm" autocomplete class="grid grid-cols-1 place-items-center">
-    <input placeholder="Email" type="email" bind:value={email} class="bg-[#e6e6e6] dark:bg-[#191919]" />
-    <input placeholder="Password" type="password" bind:value={password} class="bg-[#e6e6e6] dark:bg-[#191919]" />
+    <input placeholder="Email" type="email" bind:value={email} class="bg-light-theme dark:bg-dark-theme" />
+    <input placeholder="Password" type="password" bind:value={password} class="bg-light-theme dark:bg-dark-theme" />
 
-    <button type="button" on:click={handleClick}>SEND</button>
+    <button type="button" on:click={handleClick}>To the admin panel</button>
 
     {#if promise}
       {#await promise}

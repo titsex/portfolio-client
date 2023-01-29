@@ -9,7 +9,7 @@
     {#if projects.length}
       <div class="grid grid-cols-4 gap-7">
         {#each projects as project}
-          <div class="bg-[#e6e6e6] transition-transform hover:scale-110 dark:bg-[#191919]">
+          <div class="bg-dark-theme transition-transform hover:scale-110 dark:bg-dark-theme">
             <img width="350" height="350" class="invert dark:invert-0" src={project.image} alt="" />
             <div class="p-5">
               <h2 class="mb-5 text-xl font-semibold">next-extensive-template</h2>

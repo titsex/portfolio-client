@@ -12,9 +12,9 @@
 <section class="mb-0 w-5/12 shrink-0 grow-0 px-6">
   <h1 class="mb-5 text-center text-2xl font-semibold">Contact Me</h1>
 
-  <input placeholder="First Name" type="text" bind:value={name} class="bg-[#e6e6e6] dark:bg-[#191919]" />
-  <input placeholder="Email" type="email" bind:value={email} class="bg-[#e6e6e6] dark:bg-[#191919]" />
-  <textarea placeholder="Message" type="text" bind:value={message} class="bg-[#e6e6e6] dark:bg-[#191919]" />
+  <input placeholder="First Name" type="text" bind:value={name} class="bg-light-theme dark:bg-dark-theme" />
+  <input placeholder="Email" type="email" bind:value={email} class="bg-light-theme dark:bg-dark-theme" />
+  <textarea placeholder="Message" type="text" bind:value={message} class="bg-light-theme dark:bg-dark-theme" />
 
   <button on:click={handleClick}>SEND</button>
 

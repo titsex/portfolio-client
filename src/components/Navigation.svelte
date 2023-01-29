@@ -32,8 +32,8 @@
       {/if}
     </div>
 
-    <div class="ml-auto mb-auto flex">
-      <button on:click={logout} id="logout" hidden={!(type === 'admin' && token.get())}> Log out </button>
+    <div class="ml-auto mb-auto flex md:mt-auto">
+      <button on:click={logout} id="logout" hidden={!(type === 'admin' && token.get())}>Log out</button>
 
       <button id="switchTheme" class="mr-5 md:mr-0" aria-label="theme-toggler" on:click={switchTheme}>
         <SwitchThemeIcon />
@@ -62,7 +62,7 @@
   }
 
   #logout {
-    @apply mr-5 rounded-full bg-red-900 px-2 text-sm font-bold text-white;
+    @apply mr-5 rounded-full bg-red-600 px-2 py-1.5 text-sm font-bold text-white;
   }
 
   #logout:hover {
