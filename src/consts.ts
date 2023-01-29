@@ -11,16 +11,16 @@ export const adminRoutes: IRoute[] = [{ title: 'Offers', to: '#offers' }]
 
 export const projects: IProject[] = [
   {
-    image: 'image.jpg',
+    image: 'https://source.unsplash.com/random/343x343?sig=1',
   },
   {
-    image: 'image.jpg',
+    image: 'https://source.unsplash.com/random/343x343?sig=2',
   },
   {
-    image: 'image.jpg',
+    image: 'https://source.unsplash.com/random/343x343?sig=3',
   },
   {
-    image: 'image.jpg',
+    image: 'https://source.unsplash.com/random/343x343?sig=4',
   },
 ]
 
