@@ -9,7 +9,7 @@ import axios from 'axios'
 export const isAuth = customPersistentAtom<boolean>('isAuth', false)
 export const token = persistentAtom<string>('token', '')
 
-export async function login(email: string, password: string) {
+export async function login(email: string, password: string): Promise<void> {
   try {
     const { data } = await api.post<ILoginResponse>('/users/login', { email, password })
 
@@ -22,7 +22,7 @@ export async function login(email: string, password: string) {
   }
 }
 
-export async function logout() {
+export async function logout(): Promise<void> {
   try {
     await api.post('/users/logout')
 
@@ -35,7 +35,7 @@ export async function logout() {
   }
 }
 
-export async function checkAuth() {
+export async function checkAuth(): Promise<void> {
   try {
     const { data } = await axios.get<ILoginResponse>('http://localhost:7000/api/users/refresh', {
       withCredentials: true,

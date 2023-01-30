@@ -1,20 +1,20 @@
-<script>
+<script lang="ts">
   import Spinner from '@component/Spinner'
 
   let [name, email, message] = ['', '', '']
-  let promise
+  let promise: Promise<void>
 
   function handleClick() {
     // todo
   }
 </script>
 
-<section class="mb-0 w-5/12 shrink-0 grow-0 px-6">
+<section class="mb-0 w-full shrink-0 grow-0 px-6 lg:w-5/12">
   <h1 class="mb-5 text-center text-2xl font-semibold">Contact Me</h1>
 
   <input placeholder="First Name" type="text" bind:value={name} class="bg-light-theme dark:bg-dark-theme" />
   <input placeholder="Email" type="email" bind:value={email} class="bg-light-theme dark:bg-dark-theme" />
-  <textarea placeholder="Message" type="text" bind:value={message} class="bg-light-theme dark:bg-dark-theme" />
+  <textarea placeholder="Message" bind:value={message} class="bg-light-theme dark:bg-dark-theme" />
 
   <button on:click={handleClick}>SEND</button>
 

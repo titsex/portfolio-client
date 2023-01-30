@@ -3,7 +3,7 @@ import { ITheme } from '@types'
 
 export const theme = persistentAtom<ITheme>('theme', '')
 
-export function switchTheme() {
+export function switchTheme(): void {
   let currentTheme = theme.get()
 
   if (!currentTheme) {
@@ -20,7 +20,7 @@ export function switchTheme() {
   switchThemeVoice(nextTheme)
 }
 
-function switchThemeVoice(theme: ITheme) {
+function switchThemeVoice(theme: ITheme): void {
   const audio = new Audio(theme === 'dark' ? './enable-theme.ogg' : './disable-theme.ogg')
   audio.volume = 0.5
   audio.play()

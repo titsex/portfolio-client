@@ -1,9 +1,11 @@
 export interface LayoutProps {
   title?: string
   description?: string
-  navigationType?: 'default' | 'admin'
+  navigationType?: NavigationType
   navigationStatus?: boolean
 }
+
+export type NavigationType = 'default' | 'admin'
 
 export interface IRoute {
   title: string
@@ -26,34 +28,6 @@ export interface ISocial {
 }
 
 export type ITheme = 'dark' | 'light' | ''
-
-export interface ISendOffer {
-  email: string
-  name: string
-  message: string
-}
-
-export interface IChangeOfferStatus {
-  status: OfferStatuses
-  id: number
-}
-
-export interface IOffer {
-  id: number
-  email: string
-  name: string
-  message: string
-  isConfirmed: boolean
-  confirmationLink: string
-  status: OfferStatuses
-}
-
-export type OfferStatuses = 'rejected' | 'interested' | 'reviewed' | 'accepted' | 'pending'
-
-export interface ILogin {
-  email: string
-  password: string
-}
 
 enum IRoles {
   USER = 'user',

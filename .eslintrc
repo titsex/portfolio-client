@@ -32,6 +32,9 @@
       "parser": "astro-eslint-parser",
       "env": {
         "astro/astro": true
+      },
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser"
       }
     },
     {
@@ -49,6 +52,9 @@
       "parser": "svelte-eslint-parser",
       "env": {
         "browser": true
+      },
+      "parserOptions": {
+        "parser": "@typescript-eslint/parser"
       }
     },
     {

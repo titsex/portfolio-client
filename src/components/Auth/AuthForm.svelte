@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
   import Spinner from '@component/Spinner'
   import { login } from '@store/authorization'
 
-  let promise
+  let promise: Promise<void>
 
   let [email, password] = ['', '']
 
@@ -14,7 +14,7 @@
 <div>
   <h1 class="mb-5 text-center text-2xl font-semibold">Authorization</h1>
 
-  <form name="authForm" autocomplete class="grid grid-cols-1 place-items-center">
+  <form name="authForm" autocomplete="on" class="grid grid-cols-1 place-items-center">
     <input placeholder="Email" type="email" bind:value={email} class="bg-light-theme dark:bg-dark-theme" />
     <input placeholder="Password" type="password" bind:value={password} class="bg-light-theme dark:bg-dark-theme" />
 

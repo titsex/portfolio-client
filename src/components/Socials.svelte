@@ -2,12 +2,12 @@
   import { socials } from '@consts'
 </script>
 
-<section class="w-6/12">
+<section class="mt-10 w-full lg:mt-0 lg:w-6/12">
   <h1 class="mb-5 text-center text-2xl font-semibold">My Social</h1>
 
   <div class="flex flex-wrap">
     {#each socials as social}
-      <div class="mb-12 ml-32">
+      <div class="m-auto mb-0 lg:mb-12 lg:ml-auto">
         <div class="flex">
           <a
             href={social.link}

@@ -1,13 +1,15 @@
-<script>
-  export let type
-  export let status
+<script lang="ts">
+  import type { NavigationType } from '@types'
+
+  export let type: NavigationType
+  export let status: boolean
 
   import { logout, token } from '@store/authorization'
   import { routes, adminRoutes } from '@consts'
   import { switchTheme } from '@store/theme'
 
   import SwitchThemeIcon from '@SVG/SwitchThemeIcon'
-  import MenuIcon from './SVG/MenuIcon.svelte'
+  import MenuIcon from '@SVG/MenuIcon'
 
   let menuIsOpen = false
 
@@ -20,12 +22,14 @@
   <div class="flex">
     <a href="/" aria-label="Home" class="mr-auto">Portfolio</a>
 
-    <div hidden={!menuIsOpen} class="md:block md:w-auto">
+    <div hidden={!menuIsOpen} class="md:block">
       {#if status}
         <ul class="mt-9 flex flex-col text-center md:mt-0 md:flex-row md:space-x-5">
           {#each type === 'default' ? routes : adminRoutes as route}
             <li>
-              <a aria-label={route.title} class="block hover:text-red-400" href={route.to}>{route.title}</a>
+              <a aria-label={route.title} class="block text-3xl hover:text-red-400 md:text-2xl" href={route.to}
+                >{route.title}</a
+              >
             </li>
           {/each}
         </ul>
@@ -35,7 +39,7 @@
     <div class="ml-auto mb-auto flex md:mt-auto">
       <button on:click={logout} id="logout" hidden={!(type === 'admin' && token.get())}>Log out</button>
 
-      <button id="switchTheme" class="mr-5 md:mr-0" aria-label="theme-toggler" on:click={switchTheme}>
+      <button id="switchTheme" class="mr-5 md:mr-0" on:click={switchTheme}>
         <SwitchThemeIcon />
       </button>
 
