@@ -4,12 +4,14 @@ specifiers:
   '@astrojs/svelte': ^2.0.0
   '@astrojs/tailwind': ^3.0.0
   '@nanostores/persistent': ^0.7.0
+  '@playwright/test': ^1.30.0
   '@types/node': ^18.11.18
   '@typescript-eslint/eslint-plugin': ^5.49.0
   '@typescript-eslint/parser': ^5.49.0
   astro: ^2.0.2
   astrojs-service-worker: ^0.0.9
   axios: ^1.2.6
+  dotenv: ^16.0.3
   eslint: ^8.33.0
   eslint-config-prettier: ^8.6.0
   eslint-plugin-astro: ^0.23.0
@@ -34,11 +36,13 @@ dependencies:
   astro: 2.0.2_@types+node@18.11.18
   astrojs-service-worker: 0.0.9_astro@2.0.2
   axios: 1.2.6
+  dotenv: 16.0.3
   nanostores: 0.7.1
   svelte: 3.55.1
   tailwindcss: 3.2.4
 
 devDependencies:
+  '@playwright/test': 1.30.0
   '@types/node': 18.11.18
   '@typescript-eslint/eslint-plugin': 5.49.0_rsaczafy73x3xqauzesvzbsgzy
   '@typescript-eslint/parser': 5.49.0_zkdaqh7it7uc4cvz2haft7rc6u
@@ -1684,6 +1688,15 @@ packages:
       tiny-glob: 0.2.9
       tslib: 2.5.0
 
+  /@playwright/test/1.30.0:
+    resolution: {integrity: sha512-SVxkQw1xvn/Wk/EvBnqWIq6NLo1AppwbYOjNLmyU0R1RoQ3rLEBtmjTnElcnz8VEtn11fptj1ECxK0tgURhajw==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dependencies:
+      '@types/node': 18.11.18
+      playwright-core: 1.30.0
+    dev: true
+
   /@proload/core/0.3.3:
     resolution: {integrity: sha512-7dAFWsIK84C90AMl24+N/ProHKm4iw0akcnoKjRvbfHifJZBLhaDsDus1QJmhG12lXj4e/uB/8mB/0aduCW+NQ==}
     dependencies:
@@ -2689,6 +2702,11 @@ packages:
     dependencies:
       esutils: 2.0.3
     dev: true
+
+  /dotenv/16.0.3:
+    resolution: {integrity: sha512-7GO6HghkA5fYG9TYnNxi14/7K9f5occMlp3zXAuSxn7CKCxt9xbNWG7yF8hTCSUchlfWSe3uLmlPfigevRItzQ==}
+    engines: {node: '>=12'}
+    dev: false
 
   /dset/3.1.2:
     resolution: {integrity: sha512-g/M9sqy3oHe477Ar4voQxWtaPIFw1jTdKZuomOjhCcBx9nHUNn0pu6NopuFFrTh/TRZIKEj+76vLWFu9BNKk+Q==}
@@ -4640,6 +4658,12 @@ packages:
     dependencies:
       find-up: 4.1.0
     dev: false
+
+  /playwright-core/1.30.0:
+    resolution: {integrity: sha512-7AnRmTCf+GVYhHbLJsGUtskWTE33SwMZkybJ0v6rqR1boxq2x36U7p1vDRV7HO2IwTZgmycracLxPEJI49wu4g==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
 
   /postcss-import/14.1.0_postcss@8.4.21:
     resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}

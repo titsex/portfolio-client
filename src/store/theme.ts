@@ -21,7 +21,7 @@ export function switchTheme(): void {
 }
 
 function switchThemeVoice(theme: ITheme): void {
-  const audio = new Audio(theme === 'dark' ? './enable-theme.ogg' : './disable-theme.ogg')
+  const audio = new Audio(`./sounds/${theme === 'dark' ? 'enable' : 'disable'}-theme.ogg`)
   audio.volume = 0.5
   audio.play()
 }

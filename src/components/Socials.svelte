@@ -2,7 +2,7 @@
   import { socials } from '@consts'
 </script>
 
-<section class="mt-10 w-full lg:mt-0 lg:w-6/12">
+<section id="socials" class="mt-10 w-full lg:mt-0 lg:w-6/12">
   <h1 class="mb-5 text-center text-2xl font-semibold">My Social</h1>
 
   <div class="flex flex-wrap">

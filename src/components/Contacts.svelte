@@ -9,7 +9,7 @@
   }
 </script>
 
-<section class="mb-0 w-full shrink-0 grow-0 px-6 lg:w-5/12">
+<section id="contacts" class="mb-0 w-full shrink-0 grow-0 px-6 lg:w-5/12">
   <h1 class="mb-5 text-center text-2xl font-semibold">Contact Me</h1>
 
   <input placeholder="First Name" type="text" bind:value={name} class="bg-light-theme dark:bg-dark-theme" />
