@@ -2,12 +2,12 @@ import { test, expect } from '@playwright/test'
 
 test.describe('index page tests', () => {
   test('title is correct', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
     await expect(page).toHaveTitle('Portfolio')
   })
 
   test('has a section about me', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
 
     const locator = page.locator('#about')
 
@@ -15,7 +15,7 @@ test.describe('index page tests', () => {
   })
 
   test('has a section projects', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
 
     const locator = page.locator('#projects')
 
@@ -23,7 +23,7 @@ test.describe('index page tests', () => {
   })
 
   test('has a section contacts', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
 
     const locator = page.locator('#contacts')
 
@@ -31,7 +31,7 @@ test.describe('index page tests', () => {
   })
 
   test('has a section socials', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
 
     const locator = page.locator('#socials')
 
@@ -39,7 +39,7 @@ test.describe('index page tests', () => {
   })
 
   test('title of the section about me is correct', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
 
     const locator = page.locator('#about')
     const heading = locator.getByRole('heading', { name: 'About Me' })
@@ -48,7 +48,7 @@ test.describe('index page tests', () => {
   })
 
   test('title of the section projects is correct', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
 
     const locator = page.locator('#projects')
     const heading = locator.getByRole('heading', { name: 'Projects' })
@@ -57,7 +57,7 @@ test.describe('index page tests', () => {
   })
 
   test('title of the section contacts is correct', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
 
     const locator = page.locator('#contacts')
     const heading = locator.getByRole('heading', { name: 'Contact Me' })
@@ -66,7 +66,7 @@ test.describe('index page tests', () => {
   })
 
   test('title of the section socials is correct', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
 
     const locator = page.locator('#socials')
     const heading = locator.getByRole('heading', { name: 'My Social' })
@@ -75,7 +75,7 @@ test.describe('index page tests', () => {
   })
 
   test('has input the first name in the contacts section', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
 
     const locator = page.locator('#contacts')
     const input = locator.getByPlaceholder('First Name')
@@ -84,7 +84,7 @@ test.describe('index page tests', () => {
   })
 
   test('has input the email in the contacts section', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
 
     const locator = page.locator('#contacts')
     const input = locator.getByPlaceholder('Email')
@@ -93,7 +93,7 @@ test.describe('index page tests', () => {
   })
 
   test('has input the message in the contacts section', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
 
     const locator = page.locator('#contacts')
     const input = locator.getByPlaceholder('Message')
@@ -102,7 +102,7 @@ test.describe('index page tests', () => {
   })
 
   test('has a button in the contacts section', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
 
     const locator = page.locator('#contacts')
     const button = locator.getByRole('button')
@@ -111,7 +111,7 @@ test.describe('index page tests', () => {
   })
 
   test('has a send button in the contacts section', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+    await page.goto(`/`)
 
     const locator = page.locator('#contacts')
     const button = locator.getByRole('button', { name: 'SEND' })
@@ -119,8 +119,8 @@ test.describe('index page tests', () => {
     await expect(button).toBeVisible()
   })
 
-  test('Visual comparison of the entire page', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+  test('visual comparison of the entire page', async ({ page }) => {
+    await page.goto(`/`)
 
     expect(
       await page.screenshot({ fullPage: true }),
@@ -128,8 +128,8 @@ test.describe('index page tests', () => {
     ).toMatchSnapshot(['landing', `page.png`])
   })
 
-  test('Visual comparison of the about me section', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+  test('visual comparison of the about me section', async ({ page }) => {
+    await page.goto(`/`)
 
     const locator = page.locator('#about')
 
@@ -139,8 +139,8 @@ test.describe('index page tests', () => {
     ])
   })
 
-  test('Visual comparison of the projects section', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+  test('visual comparison of the projects section', async ({ page }) => {
+    await page.goto(`/`)
 
     const locator = page.locator('#projects')
 
@@ -150,8 +150,8 @@ test.describe('index page tests', () => {
     ])
   })
 
-  test('Visual comparison of the contacts section', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+  test('visual comparison of the contacts section', async ({ page }) => {
+    await page.goto(`/`)
 
     const locator = page.locator('#contacts')
 
@@ -161,8 +161,8 @@ test.describe('index page tests', () => {
     ])
   })
 
-  test('Visual comparison of the socials section', async ({ page }) => {
-    await page.goto(`${process.env.CLIENT_URL}/`)
+  test('visual comparison of the socials section', async ({ page }) => {
+    await page.goto(`/`)
 
     const locator = page.locator('#socials')
 

@@ -3,17 +3,24 @@ dotenv()
 
 import type { PlaywrightTestConfig } from '@playwright/test'
 import { devices } from '@playwright/test'
+import { join } from 'path'
+
+const testsDirPath = join('tests')
+const snapshotsDirPath = join('snapshots')
 
 const config: PlaywrightTestConfig = {
-  testDir: './tests',
+  testDir: testsDirPath,
   timeout: 30 * 1000,
   expect: {
     timeout: 5000,
   },
+  snapshotDir: snapshotsDirPath,
+  updateSnapshots: 'missing',
   fullyParallel: true,
   ignoreSnapshots: process.env.IGNORE_SNAPSHOTS === 'true' ? true : false,
   reporter: 'html',
   use: {
+    baseURL: process.env.CLIENT_URL,
     actionTimeout: 0,
     trace: 'on-first-retry',
   },
