@@ -119,56 +119,125 @@ test.describe('index page tests', () => {
     await expect(button).toBeVisible()
   })
 
-  test('visual comparison of the entire page', async ({ page }) => {
-    await page.goto(`/`)
+  test.describe('visual comparison in a light theme', () => {
+    test.use({ colorScheme: 'light' })
 
-    expect(
-      await page.screenshot({ fullPage: true }),
-      'Visually, the pages in the screenshots did not match',
-    ).toMatchSnapshot(['landing', `page.png`])
+    test('visual comparison of the entire page in a light theme', async ({ page }) => {
+      await page.goto(`/`)
+
+      expect(
+        await page.screenshot({ fullPage: true }),
+        'Visually, the pages in the screenshots did not match',
+      ).toMatchSnapshot(['light', 'landing', `page.png`])
+    })
+
+    test('visual comparison of the about me section in a light theme', async ({ page }) => {
+      await page.goto(`/`)
+
+      const locator = page.locator('#about')
+
+      expect(await locator.screenshot(), 'Visually, the sections in the screenshots did not match').toMatchSnapshot([
+        'light',
+        'about',
+        `section.png`,
+      ])
+    })
+
+    test('visual comparison of the projects section in a light theme', async ({ page }) => {
+      await page.goto(`/`)
+
+      const locator = page.locator('#projects')
+
+      expect(await locator.screenshot(), 'Visually, the sections in the screenshots did not match').toMatchSnapshot([
+        'light',
+        'projects',
+        `section.png`,
+      ])
+    })
+
+    test('visual comparison of the contacts section in a light theme', async ({ page }) => {
+      await page.goto(`/`)
+
+      const locator = page.locator('#contacts')
+
+      expect(await locator.screenshot(), 'Visually, the sections in the screenshots did not match').toMatchSnapshot([
+        'light',
+        'contacts',
+        `section.png`,
+      ])
+    })
+
+    test('visual comparison of the socials section in a light theme', async ({ page }) => {
+      await page.goto(`/`)
+
+      const locator = page.locator('#socials')
+
+      expect(await locator.screenshot(), 'Visually, the sections in the screenshots did not match').toMatchSnapshot([
+        'light',
+        'socials',
+        `section.png`,
+      ])
+    })
   })
 
-  test('visual comparison of the about me section', async ({ page }) => {
-    await page.goto(`/`)
+  test.describe('visual comparison in a dark theme', () => {
+    test.use({ colorScheme: 'dark' })
 
-    const locator = page.locator('#about')
+    test('visual comparison of the entire page in a dark theme', async ({ page }) => {
+      await page.goto(`/`)
 
-    expect(await locator.screenshot(), 'Visually, the sections in the screenshots did not match').toMatchSnapshot([
-      'about',
-      `section.png`,
-    ])
-  })
+      expect(
+        await page.screenshot({ fullPage: true }),
+        'Visually, the pages in the screenshots did not match',
+      ).toMatchSnapshot(['dark', 'landing', `page.png`])
+    })
 
-  test('visual comparison of the projects section', async ({ page }) => {
-    await page.goto(`/`)
+    test('visual comparison of the about me section in a dark theme', async ({ page }) => {
+      await page.goto(`/`)
 
-    const locator = page.locator('#projects')
+      const locator = page.locator('#about')
 
-    expect(await locator.screenshot(), 'Visually, the sections in the screenshots did not match').toMatchSnapshot([
-      'projects',
-      `section.png`,
-    ])
-  })
+      expect(await locator.screenshot(), 'Visually, the sections in the screenshots did not match').toMatchSnapshot([
+        'dark',
+        'about',
+        `section.png`,
+      ])
+    })
 
-  test('visual comparison of the contacts section', async ({ page }) => {
-    await page.goto(`/`)
+    test('visual comparison of the projects section in a dark theme', async ({ page }) => {
+      await page.goto(`/`)
 
-    const locator = page.locator('#contacts')
+      const locator = page.locator('#projects')
 
-    expect(await locator.screenshot(), 'Visually, the sections in the screenshots did not match').toMatchSnapshot([
-      'contacts',
-      `section.png`,
-    ])
-  })
+      expect(await locator.screenshot(), 'Visually, the sections in the screenshots did not match').toMatchSnapshot([
+        'dark',
+        'projects',
+        `section.png`,
+      ])
+    })
 
-  test('visual comparison of the socials section', async ({ page }) => {
-    await page.goto(`/`)
+    test('visual comparison of the contacts section in a dark theme', async ({ page }) => {
+      await page.goto(`/`)
 
-    const locator = page.locator('#socials')
+      const locator = page.locator('#contacts')
 
-    expect(await locator.screenshot(), 'Visually, the sections in the screenshots did not match').toMatchSnapshot([
-      'socials',
-      `section.png`,
-    ])
+      expect(await locator.screenshot(), 'Visually, the sections in the screenshots did not match').toMatchSnapshot([
+        'dark',
+        'contacts',
+        `section.png`,
+      ])
+    })
+
+    test('visual comparison of the socials section in a dark theme', async ({ page }) => {
+      await page.goto(`/`)
+
+      const locator = page.locator('#socials')
+
+      expect(await locator.screenshot(), 'Visually, the sections in the screenshots did not match').toMatchSnapshot([
+        'dark',
+        'socials',
+        `section.png`,
+      ])
+    })
   })
 })

@@ -55,18 +55,6 @@ const config: PlaywrightTestConfig = {
         ...devices['iPhone 12'],
       },
     },
-    {
-      name: 'Microsoft Edge',
-      use: {
-        channel: 'msedge',
-      },
-    },
-    {
-      name: 'Google Chrome',
-      use: {
-        channel: 'chrome',
-      },
-    },
   ],
 }
 
