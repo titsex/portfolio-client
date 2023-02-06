@@ -1,5 +1,6 @@
 <script lang="ts">
   import { avatarUrl } from '@consts'
+  import { t } from 'i18next'
 </script>
 
 <section id="about" class="bg-light-theme dark:bg-dark-theme">
@@ -12,14 +13,14 @@
         height="240"
         alt="Github Profile Avatar"
       />
-      <span class="mt-3 flex justify-center opacity-70">Web Developer</span>
+      <span class="mt-3 flex justify-center opacity-70">{t('section.about.job')}</span>
     </div>
 
     <div class="mt-7 ml-12 text-xl">
-      <h1 class="text-2xl font-semibold">About Me</h1>
+      <h1 class="text-2xl font-semibold">{t('section.about.title')}</h1>
 
       <p class="mt-5">
-        Hi there, my name's Ravan. I'm <span class="font-semibold text-red-400">∞</span> y.o
+        {t('section.about.info')}
       </p>
     </div>
   </div>

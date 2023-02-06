@@ -1,0 +1,29 @@
+{
+  "site": {
+    "title": "Portfolio",
+    "description": "My portfolio is a website that not only informs about me, but also shows my skills."
+  },
+  "section": {
+    "about": {
+      "title": "About Me",
+      "info": "Hi there, my name's Ravan. I'm ∞ y.o",
+      "job": "Web Developer"
+    },
+    "projects": {
+      "title": "Projects",
+      "empty": "So far, the list of my projects is empty"
+    },
+    "contact": {
+      "title": "Contact Me",
+      "form": {
+        "name": "First Name",
+        "email": "Email",
+        "message": "Message",
+        "button": "SEND"
+      }
+    },
+    "social": {
+      "title": "My Social"
+    }
+  }
+}

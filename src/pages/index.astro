@@ -4,6 +4,8 @@ import AboutMe from '@component/AboutMe'
 import Contacts from '@component/Contacts'
 import Projects from '@component/Projects'
 import Socials from '@component/Socials'
+
+import { t } from 'i18next'
 ---
 
 <Layout>
@@ -11,13 +13,29 @@ import Socials from '@component/Socials'
   <Projects />
 
   <div class="mt-5 block p-5 lg:flex">
-    <Contacts client:load />
+    <Contacts
+      nameholder={t('section.contact.form.name')}
+      emailholder={t('section.contact.form.email')}
+      messageholder={t('section.contact.form.message')}
+      title={t('section.contact.title')}
+      client:load
+    />
+
     <Socials />
   </div>
 </Layout>
 
 <style is:global>
   section {
-    @apply scroll-mt-16;
+      @apply scroll-mt-16;
+      font-family: "Fira Code Light", fantasy;
+  }
+
+  h1 {
+      font-family: "Fira Code SemiBold", fantasy;
+  }
+
+  h2 {
+      font-family: "Fira Code Medium", fantasy;
   }
 </style>

@@ -1,9 +1,10 @@
 <script>
   import { projects } from '@consts'
+  import { t } from 'i18next'
 </script>
 
 <section id="projects" class="mt-5 p-5">
-  <h1 class="text-center text-2xl font-semibold">Projects</h1>
+  <h1 class="text-center text-2xl font-semibold">{t('section.projects.title')}</h1>
 
   <div class="mt-7">
     {#if projects.length}
@@ -23,8 +24,14 @@
         {/each}
       </div>
     {:else}
-      <h2 class="text-center">So far, the list of my projects is empty</h2>
+      <h2 class="text-center">{t('section.projects.empty')}</h2>
       <hr class="mt-5" />
     {/if}
   </div>
 </section>
+
+<style>
+  p {
+    font-family: 'Fira Code Light';
+  }
+</style>

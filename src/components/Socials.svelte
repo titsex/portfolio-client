@@ -1,9 +1,10 @@
 <script>
   import { socials } from '@consts'
+  import { t } from 'i18next'
 </script>
 
 <section id="socials" class="mt-10 w-full lg:mt-0 lg:w-6/12">
-  <h1 class="mb-5 text-center text-2xl font-semibold">My Social</h1>
+  <h1 class="mb-5 text-center text-2xl font-semibold">{t('section.social.title')}</h1>
 
   <div class="flex flex-wrap">
     {#each socials as social}

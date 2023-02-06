@@ -1,17 +1,18 @@
 ---
 import Navigation from '@component/Navigation'
 import type { LayoutProps } from '@types'
+import i18next, { t } from 'i18next'
 
 const {
-  title = 'Portfolio',
-  description = 'My portfolio is a website that not only informs about me, but also shows my skills.',
+  title = t('site.title'),
+  description = t('site.description'),
   navigationType = 'default',
   navigationStatus = true,
 } = Astro.props as LayoutProps
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={i18next.language}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -57,13 +58,14 @@ const {
     </main>
   </body>
 
-  <style lang="css">
+  <style is:global lang="css">
     body {
-      @apply transition-colors duration-[85ms] scrollbar;
+        @apply transition-colors duration-[85ms] scrollbar;
+        font-family: "Fira Code Medium", fantasy;
     }
 
     body::-webkit-scrollbar-thumb:hover {
-      @apply scrollbar scrollbar-track-white scrollbar-thumb-slate-400 dark:scrollbar-track-black dark:scrollbar-thumb-dark-gray;
+        @apply scrollbar scrollbar-track-white scrollbar-thumb-slate-400 dark:scrollbar-track-black dark:scrollbar-thumb-dark-gray;
     }
   </style>
 </html>
